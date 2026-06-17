@@ -49,13 +49,9 @@ img, svg {
   --section-padding-y: 2rem;
   --content-max-width: 1100px;
 }
-
-/* Every section gets the SAME horizontal rhythm */
 section {
   padding: var(--section-padding-y) var(--section-padding-x);
 }
-
-/* Every section's CONTENT is centered within a max-width */
 .section-inner {
   max-width: var(--content-max-width);
   margin: 0 auto;
@@ -208,22 +204,16 @@ nav svg{
 
 /* ============ HERO SECTION ============ */
 .hero {
-  /* 🛠️ FIX 1: Allow container to stretch dynamically on mobile if text wraps */
   min-height: 25vh;
   width: 100%;
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  /* 🛠️ FIX 2: Add safety padding at bottom to clear stats bar layout */
-  padding: 5rem 1.25rem 4rem 1.25rem; 
+  padding: 5rem 1.25rem 11rem 1.25rem; 
   position: relative;
   box-sizing: border-box;
-  
-  /* Keep your existing background properties below */
-  background-image: url('./assets/hero-bg.webp'); /* Adjust path to match yours */
+  background-image: url('./assets/hero-bg.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -304,22 +294,19 @@ nav svg{
 /* ============ STATS ============ */
 .stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid on mobile */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   box-sizing: border-box;
-  
-  width: 100%;
+  width: calc(100% - 2.5rem); 
   max-width: 1100px;
   padding: 1.5rem 1rem;
-  
   background-color: var(--primary);
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-  
-  /* 🛠️ FIX 4: Keeps it in normal page flow on mobile so it can NEVER overlap buttons */
-  position: relative;
-  margin: 0 auto; 
-  transform: translateY(50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
   z-index: 10;
 }
 .stat{
@@ -501,7 +488,7 @@ nav svg{
 
 .testimonial p, 
 .testimonial .review {
-  color: var(--primary); /* 🛠️ Guarantees review body text is dark and legible */
+  color: var(--primary);
 }
 
 .profile-wrap {
@@ -640,7 +627,7 @@ hr{
 footer p, 
 .column a {
   color: var(--primary);
-  font-size: clamp(0.75rem, 1vw, 0.875rem); /* 🛠️ Integrates your compact fluid font directly */
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
 }
 
 @media (min-width: 480px) {
@@ -667,19 +654,17 @@ footer p,
     display: none;
   }
   .hero {
-    height: 80vh; /* Lock cleanly to full screen height on desktop */
+    height: 80vh;
     padding-bottom: 0;
   }
 
   .hero-buttons {
-    margin-bottom: 0; /* Remove unnecessary mobile margin space */
+    margin-bottom: 0;
   }
 
   .stats {
-    grid-template-columns: repeat(4, 1fr); /* 4 items in a clean single row */
+    grid-template-columns: repeat(4, 1fr);
     padding: 2rem;
-    
-    /* 🛠️ FIX 5: Flawlessly hangs the bar half-on, half-off the bottom edge of desktop screens */
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -743,7 +728,6 @@ h3{
 }
 
 h4 {
-  /* 🛠️ Scales fluidly from 18px on mobile to 22px on desktop */
   font-size: clamp(1.125rem, 1.5vw, 1.375rem); 
   font-weight: 600;
   line-height: 1.3;
