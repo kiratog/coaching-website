@@ -334,69 +334,73 @@ nav svg{
 }
 
 /* ============ WHY CHOOSE US? ============ */
-.reasons-wrap{
+.reasons-wrap {
     color: var(--primary-text);
+    padding: 2rem 0.5rem;
 }
 
-.reasons{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-content: center;
-    gap: 2.5rem;
+.reasons {
+  display: grid;                         
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.reasons svg{
-  width: 3rem;
-  height: 3rem;
+.reasons > .wrap {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reason {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: rgba(253, 240, 213, 0.06);
+  border: 1px solid rgba(253, 240, 213, 0.12);
+  border-radius: 12px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.reason-head {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.reason-head h3 {
+  font-size: clamp(0.5rem, 4vw, 1.25rem) !important;
+  line-height: 1.2;
+  margin: 0;
+}
+.reason p {
+  display: none;
+}
+
+.reasons svg {
+  width: 2.5rem;
+  height: 2.5rem;
   fill: var(--accent);
   transition-duration: 250ms;
   background-color: var(--secondary);
   padding: 0.5rem;
   border-radius: 1rem;
+  flex-shrink: 0;
 }
 
-.reason-head{
-  display: flex;
-  justify-content: flex-start;
-  gap: 1rem;
-  align-items: center;
+.reason:hover svg {
+    transform: scale(1.15);
 }
 
-.reason{
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  gap: 1.25rem;
-  padding: 1.5rem;
-  background-color: rgba(253, 240, 213, 0.06);
-  border: 1px solid rgba(253, 240, 213, 0.12);
-  min-width: 200px;
-  min-height: 190px;
-  border-radius: 12px;
-}
-
-
-.reason:hover svg{
-    transform: scale(1.2);
-}
-
-.reason p{
-  padding-left: 1rem;
-  padding-top: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .reasons{
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.reason.in-view{
+.reason.in-view {
     opacity: 1;
     transform: translateY(0);
 }
-
 /* ============ COURSES============ */
 
 
@@ -560,6 +564,10 @@ nav svg{
 }
 
 @media (min-width: 768px) {
+  .reasons-wrap {
+    color: var(--primary-text);
+    padding: 2rem 4rem;
+}
   .about-content {
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -660,6 +668,14 @@ footer p,
 }
 
 @media (min-width: 768px) {
+  .reason p {
+    display: block !important;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    color: rgba(253, 240, 213, 0.85);
+    line-height: 1.5;
+  }
   .footer-grid {
     grid-template-columns: repeat(4, 1fr);
   }
