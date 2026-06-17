@@ -178,7 +178,7 @@ section {
     justify-content: flex-start;
     align-items: flex-start;
     z-index: 999;
-    background-color: #eff6ee29;
+    background-color: var(--primary);
     backdrop-filter: blur(3px);
     box-shadow: -1px 0 10px var(--secondary);
     width: 100%;
@@ -349,7 +349,6 @@ nav svg{
 /* ============ WHY CHOOSE US? ============ */
 .reasons-wrap{
     color: var(--primary-text);
-    margin-top: 5rem;
 }
 
 .reasons{
@@ -416,6 +415,7 @@ nav svg{
 
 #courses{
   padding: 2rem 0;
+  margin-top: 5rem;
 }
 
 .courses{
@@ -486,7 +486,7 @@ nav svg{
   flex-direction: column;
   gap: 1rem;
   max-width: 540px;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 12px;
   grid-area: 1 / 1 / 2 / 2;
   opacity: 0;
