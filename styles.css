@@ -489,7 +489,6 @@ nav svg{
 .testimonial.active {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
 }
 
 .testimonial p, 
